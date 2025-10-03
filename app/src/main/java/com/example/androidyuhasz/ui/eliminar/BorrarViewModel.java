@@ -32,7 +32,7 @@ public class BorrarViewModel extends AndroidViewModel {
 
     public void buscarProducto(String codigo) {
         // Limpia el estado anterior
-        navegarConProducto.setValue(null);
+        //navegarConProducto.setValue(null);
         error.setValue(null);
 
         if (codigo == null || codigo.trim().isEmpty()) {

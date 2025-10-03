@@ -35,5 +35,9 @@
         android:id="@+id/detalleBorrarFragment"
         android:name="com.example.androidyuhasz.ui.eliminar.DetalleBorrarFragment"
         android:label="fragment_detalle_borrar"
-        tools:layout="@layout/fragment_detalle_borrar" />
+        tools:layout="@layout/fragment_detalle_borrar" >
+        <action
+            android:id="@+id/action_detalleBorrarFragment_to_borrarFragment"
+            app:destination="@id/borrarFragment" />
+    </fragment>
 </navigation>

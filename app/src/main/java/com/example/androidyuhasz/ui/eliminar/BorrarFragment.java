@@ -4,6 +4,9 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,14 +31,10 @@ public class BorrarFragment extends Fragment {
 
         // Observa navegación con datos del producto
         bvm.getNavegarConProducto().observe(getViewLifecycleOwner(), bundle -> {
-            DetalleBorrarFragment detalle = new DetalleBorrarFragment();
-            detalle.setArguments(bundle);
-            requireActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.nav_host_fragment_content_main, detalle)
-                    .addToBackStack(null)
-                    .commit();
+            NavController navController = NavHostFragment.findNavController(BorrarFragment.this);
+            navController.navigate(R.id.action_borrarFragment_to_detalleBorrarFragment, bundle);
         });
+
 
         // Botón buscar
         binding.btnBuscar.setOnClickListener(v -> {
